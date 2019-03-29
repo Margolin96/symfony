@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Пользователи | {{ parent() }} {% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/users.css') }}">
+
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <h1>Список пользователей</h1>
+
+    <br/>
+
+    {% for user in users %}
+        <div class="users-item">
+            {{ user.email }}
+
+            {% if user.id != app.user.id %}
+                {% if subscriptions[user.id] is defined %}
+                    <a class="badge unsubscribe" href="{{ path('users_unsubscribe', {'id': user.id}) }}">отписаться</a>
+                {% else %}
+                    <a class="badge subscribe" href="{{ path('users_subscribe', {'id': user.id}) }}">подписаться</a>
+                {% endif %}
+            {% else %}
+                <span class="badge">вы</span>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

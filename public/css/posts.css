@@ -1,0 +1,36 @@
+.posts_list ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.posts_list-item {
+    border: 1px solid #E5E5E5;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.1);
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 20px;
+    background-color: #FFF;
+}
+.post_header,
+.post_content,
+.post_controls,
+.post_footer {
+    padding: 10px;
+}
+.post_header {
+    border-bottom: 1px solid #E5E5E5;
+    display: flex;
+    justify-content: space-between;
+}
+.post_content {
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+}
+.post_footer {
+    font-size: .8em;
+    background-color: #EEE;
+    display: flex;
+    justify-content: space-between;
+}

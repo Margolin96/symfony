@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Тестовое задание{% endblock %}</title>
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    {% endblock %}
+</head>
+<body>
+
+<div id="header">
+    <div class="container">
+        <div class="navbar">
+            {% block navbar %}
+                <span class="brand">Тестовое задание</span>
+                <ul class="nav">
+                    <li><a class="navbar-link" href="{{ path('posts_list') }}">Лента</a></li>
+                    <li><a class="navbar-link" href="{{ path('posts_new') }}">Новый пост</a></li>
+                    <li><a class="navbar-link" href="{{ path('users_list') }}">Пользователи</a></li>
+
+                    <li class="divider"></li>
+
+                    {% if app.user.username is defined %}
+                        <li><span class="navbar-link">{{ app.user.username }}</span></li>
+                        <li><a class="navbar-link" href="{{ path('logout') }}">Выход</a></li>
+                    {% else %}
+                        <li><a class="navbar-link" href="{{ path('login') }}">Вход</a></li>
+                        <li><a class="navbar-link" href="{{ path('signup') }}">Регистрация</a></li>
+                    {% endif %}
+                </ul>
+            {% endblock %}
+        </div>
+    </div>
+</div>
+
+<div id="content">
+    {% block body %}{% endblock %}
+</div>
+
+{% block javascripts %}{% endblock %}
+
+</body>
+</html>

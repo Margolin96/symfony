@@ -1,0 +1,16 @@
+.users-item {
+    margin-top: 15px;
+}
+.users-item .badge {
+    display: inline-block;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-left: 10px;
+    background-color: #FFF;
+    font-size: .9em;
+    line-height: 15px;
+    text-decoration: none;
+    color: #434e7b;
+}

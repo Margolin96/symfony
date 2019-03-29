@@ -1,0 +1,108 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F1F1F1;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+#header {
+    display: block;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    background-color: #434e7b;
+    top: 0;
+    left: 0;
+    height: 70px;
+    padding: 20px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.1);
+    color: #FFF;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    width: 1080px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#content {
+    margin-top: 60px;
+    padding: 20px;
+}
+
+#header {
+    padding: 10px 0;
+    height: auto;
+    color: #FFF;
+}
+#header ul, ol {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+#header .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 -15px;
+}
+#header .nav {
+    display: flex;
+}
+#header .nav li .navbar-link {
+    color: inherit;
+    padding: 10px 15px;
+    display: block;
+}
+#header .brand {
+    padding: 10px 15px;
+    display: block;
+    float: left;
+}
+#header .nav li a:hover {
+    background-color: rgba(255,255,255,.1);
+}
+#header .nav .divider {
+    display: block;
+    width: 30px;
+}
+
+form label {
+    display: block;
+    margin-top: 20px;
+}
+form input,
+form textarea {
+    margin-top: 10px;
+    display: block;
+    width: 300px;
+    border: 1px solid #E5E5E5;
+    line-height: 20px;
+    padding: 5px 10px;
+    background-color: #FFF;
+}
+form textarea {
+    width: 100%;
+    min-height: 100px;
+}
+form .btn,
+form button {
+    cursor: pointer;
+    margin-top: 20px;
+    display: block;
+    line-height: 20px;
+    padding: 10px 15px;
+    min-width: 100px;
+    color: #FFF;
+    border: 0;
+    background-color: #434e7b;
+}

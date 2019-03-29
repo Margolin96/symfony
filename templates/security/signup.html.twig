@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Регистрация | {{ parent() }} {% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Регистрация</h1>
+
+        <br/>
+
+        {{ form_start(form) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.plainPassword) }}
+
+            <button class="btn">Зарегистрироваться</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

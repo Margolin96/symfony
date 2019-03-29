@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Лента | {{ parent() }} {% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/posts.css') }}">
+
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <h1>Лента</h1>
+
+    <br/>
+
+    <div class="posts_list">
+        {% if posts is empty %}
+            <b>
+                В вашей ленте пока пусто
+                <a href="{{ path('users_list') }}">Подпишитесь</a> на кого-нибудь
+                или <a href="{{ path('posts_new') }}">создайте</a> собственный пост
+            </b>
+        {% else %}
+            <ul>
+                {% for post in posts %}
+                    {{ include('posts/list-item.html.twig', {
+                        'post': post,
+                        'author': subscriptions[post.authorId]
+                    }) }}
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+<li class="posts_list-item">
+    <div class="post_header">
+        <span class="post_author">{{ author.email }}</span>
+        <span class="post_date">
+            {{ post.createDate|date("H:i", 'Europe/Moscow') }}
+        </span>
+    </div>
+
+    <div class="post_content">
+        {{ post.content }}
+    </div>
+
+    {% if post.authorId == app.user.id %}
+        <div class="post_controls">
+            <a class="post_delete" href="{{ path('posts_delete', {'id': post.id}) }}">Удалить</a>
+        </div>
+    {% endif %}
+
+    {#<div class="post_footer">#}
+        {#<span>ID: {{ post.id }}</span>#}
+        {#<span>Date: {{ post.createDate|date("H:i d.m.Y", 'Europe/Moscow') }}</span>#}
+    {#</div>#}
+</li>

@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Авторизация | {{ parent() }} {% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <h1>Необходима авторизация</h1>
+
+    <br/>
+
+    <form method="post">
+        {% if error %}
+            <div class="alert">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+
+        <div>
+            <label for="email">Email</label>
+            <input id="email" type="email" value="{{ last_username }}" name="email" required autofocus>
+        </div>
+
+        <div>
+            <label for="password">Пароль</label>
+            <input id="password" type="password" name="password" required>
+        </div>
+
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+        <button class="btn" type="submit">Войти</button>
+    </form>
+</div>
+
+{% endblock %}
